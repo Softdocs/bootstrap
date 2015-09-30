@@ -1,3 +1,12 @@
+
+# Softdocs
+This version of bootstrap is compiled to include:  
+* Grid  
+* Utilities  
+* Normalize  
+* Bootstrap's Reboot
+* and any supporting files for those features.
+
 # [Bootstrap](http://getbootstrap.com)
 
 [![Slack](https://bootstrap-slack.herokuapp.com/badge.svg)](https://bootstrap-slack.herokuapp.com)
@@ -11,8 +20,6 @@ Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and
 
 To get started, check out <http://getbootstrap.com>!
 
-# Softdocs
-## This version of bootstrap is compiled to include the Grid, Utilities, and any supporting files for those features.
 
 ## Table of contents
 
