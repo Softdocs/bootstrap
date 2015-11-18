@@ -8,12 +8,12 @@
 $font-family-sans-serif:     "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $enable-flex:               true;
 
- // Core variables and mixins
- @import "variables";
- @import "mixins";
 
+// Core variables and mixins
+@import "variables";
+@import "mixins";
 
-// // Reset and dependencies
+// Reset and dependencies
 @import "normalize";
 //@import "print";
 
@@ -26,6 +26,7 @@ $enable-flex:               true;
 // @import "tables";
 // @import "forms";
 // @import "buttons";
+
 
 // // Components
 // @import "animation";
@@ -56,6 +57,7 @@ $enable-flex:               true;
 
 // Utility classes
 @import "utilities";
+@import "utilities-background";
 @import "utilities-spacing";
 @import "utilities-responsive";
 

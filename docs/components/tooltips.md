@@ -15,7 +15,7 @@ Inspired by the excellent Tipsy jQuery plugin written by Jason Frame. Tooltips a
 
 Things to know when using the tooltip plugin:
 
-- Tooltips rely on on the 3rd party library [Tether](http://github.hubspot.com/tether/) for positioning. You must include [tether.min.js](https://github.com/HubSpot/tether/blob/master/dist/js/tether.min.js) before bootstrap.js in order for tooltips to work!
+- Tooltips rely on the 3rd party library [Tether](http://github.hubspot.com/tether/) for positioning. You must include [tether.min.js](https://github.com/HubSpot/tether/blob/master/dist/js/tether.min.js) before bootstrap.js in order for tooltips to work!
 - Tooltips are opt-in for performance reasons, so **you must initialize them yourself**.
 - Tooltips with zero-length titles are never displayed.
 - Specify `container: 'body'` to avoid rendering problems in more complex components (like our input groups, button groups, etc).
@@ -48,7 +48,7 @@ Hover over the links below to see tooltips:
 
 Four options are available: top, right, bottom, and left aligned.
 
-<div class="bd-example bd-example-tooltip">
+<div class="bd-example bd-example-tooltip-static">
   <div class="tooltip top" role="tooltip">
     <div class="tooltip-arrow"></div>
     <div class="tooltip-inner">

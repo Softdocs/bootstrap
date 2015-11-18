@@ -138,7 +138,7 @@ const Modal = (($) => {
       $(this._dialog).on(Event.MOUSEDOWN_DISMISS, () => {
         $(this._element).one(Event.MOUSEUP_DISMISS, (event) => {
           if ($(event.target).is(this._element)) {
-            that._ignoreBackdropClick = true
+            this._ignoreBackdropClick = true
           }
         })
       })
@@ -463,8 +463,10 @@ const Modal = (($) => {
         }
 
         if (typeof config === 'string') {
+          if (data[config] === undefined) {
+            throw new Error(`No method named "${config}"`)
+          }
           data[config](relatedTarget)
-
         } else if (_config.show) {
           data.show(relatedTarget)
         }

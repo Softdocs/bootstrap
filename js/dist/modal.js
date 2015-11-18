@@ -138,7 +138,7 @@ var Modal = (function ($) {
         $(this._dialog).on(Event.MOUSEDOWN_DISMISS, function () {
           $(_this._element).one(Event.MOUSEUP_DISMISS, function (event) {
             if ($(event.target).is(_this._element)) {
-              that._ignoreBackdropClick = true;
+              _this._ignoreBackdropClick = true;
             }
           });
         });
@@ -462,6 +462,9 @@ var Modal = (function ($) {
           }
 
           if (typeof config === 'string') {
+            if (data[config] === undefined) {
+              throw new Error('No method named "' + config + '"');
+            }
             data[config](relatedTarget);
           } else if (_config.show) {
             data.show(relatedTarget);
