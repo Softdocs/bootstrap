@@ -70,6 +70,26 @@
 
 -
   browser: >
+    Firefox
+  summary: >
+    `focus` events should not be fired at the `document` object
+  upstream_bug: >
+    Mozilla#1228802
+  origin: >
+    Bootstrap#18365
+
+-
+  browser: >
+    Firefox (Windows)
+  summary: >
+    Right border of `<select>` menu is sometimes missing when screen is set to uncommon resolution
+  upstream_bug: >
+    Mozilla#1139853
+  origin: >
+    Bootstrap#15990
+
+-
+  browser: >
     Chrome (OS X)
   summary: >
     Clicking above `<input type="number">` increment button flashes the decrement button.
@@ -269,6 +289,16 @@
     WebKit#139848, Safari#19434878
   origin: >
     Bootstrap#11266, Bootstrap#13098
+
+-
+  browser: >
+    Safari (iOS)
+  summary: >
+    Tapping on `<body>` doesn't fire `click` events
+  upstream_bug: >
+    WebKit#151933
+  origin: >
+    Bootstrap#16028
 
 -
   browser: >
