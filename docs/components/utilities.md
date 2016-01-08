@@ -18,10 +18,12 @@ Assign `margin` or `padding` to an element or a subset of its sides with shortha
 The classes are named using the format: `{property}-{sides}-{size}`
 
 Where *property* is one of:
+
 * `m` - for classes that set `margin`
 * `p` - for classes that set `padding`
 
 Where *sides* is one of:
+
 * `t` - for classes that set `margin-top` or `padding-top`
 * `b` - for classes that set `margin-bottom` or `padding-bottom`
 * `l` - for classes that set `margin-left` or `padding-left`
@@ -31,13 +33,15 @@ Where *sides* is one of:
 * `a` - for classes that set a `margin` or `padding` on all 4 sides of the element
 
 Where *size* is one of:
+
 * `0` - for classes that eliminate the `margin` or `padding` by setting it to `0`
 * `1` - (by default) for classes that set the `margin` or `padding` to `$spacer-x` or `$spacer-y`
 * `2` - (by default) for classes that set the `margin` or `padding` to `$spacer-x * 1.5` or `$spacer-y * 1.5`
 * `3` - (by default) for classes that set the `margin` or `padding` to `$spacer-x * 3` or `$spacer-y * 3`
 
 Here are some representative examples of these classes:
-```scss
+
+{% highlight scss %}
 .m-t-0 {
   margin-top: 0 !important;
 }
@@ -54,7 +58,7 @@ Here are some representative examples of these classes:
 .p-a-3 {
   padding: ($spacer-y * 3) ($spacer-x * 3) !important;
 }
-```
+{% endhighlight %}
 
 Additionally, Bootstrap also includes an `.m-x-auto` class which sets the horizontal margins to `auto`.
 
@@ -91,6 +95,8 @@ Transform text in components with text capitalization classes.
 <p class="text-capitalize">CapiTaliZed text.</p>
 {% endexample %}
 
+Note how `text-capitalize` only changes the first letter of each word, leaving the case of any other letters unaffected.
+
 ## Font weight and italics
 
 Quickly change the weight (boldness) of text or italicize text.
@@ -98,7 +104,7 @@ Quickly change the weight (boldness) of text or italicize text.
 {% example html %}
 <p class="font-weight-bold">Bold text.</p>
 <p class="font-weight-normal">Normal weight text.</p>
-<p class="font-italic">Italicized text.</p>
+<p class="font-italic">Italic text.</p>
 {% endexample %}
 
 ## Contextual colors and backgrounds
@@ -165,14 +171,14 @@ These utility classes float an element to the left or right, or disable floating
 Two similar non-responsive mixins (`pull-left` and `pull-right`) are also available.
 
 {% example html %}
-<div class="pull-xs-left">Float left on all viewport sizes</div>
-<div class="pull-xs-right">Float right on all viewport sizes</div>
-<div class="pull-xs-none">Don't float on all viewport sizes</div>
+<div class="pull-xs-left">Float left on all viewport sizes</div><br>
+<div class="pull-xs-right">Float right on all viewport sizes</div><br>
+<div class="pull-xs-none">Don't float on all viewport sizes</div><br>
 
-<div class="pull-sm-left">Float left on viewports sized SM (small) or wider</div>
-<div class="pull-md-left">Float left on viewports sized MD (medium) or wider</div>
-<div class="pull-lg-left">Float left on viewports sized LG (large) or wider</div>
-<div class="pull-xl-left">Float left on viewports sized XL (extra-large) or wider</div>
+<div class="pull-sm-left">Float left on viewports sized SM (small) or wider</div><br>
+<div class="pull-md-left">Float left on viewports sized MD (medium) or wider</div><br>
+<div class="pull-lg-left">Float left on viewports sized LG (large) or wider</div><br>
+<div class="pull-xl-left">Float left on viewports sized XL (extra-large) or wider</div><br>
 {% endexample %}
 
 {% highlight scss %}

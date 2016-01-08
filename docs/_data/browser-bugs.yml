@@ -30,6 +30,16 @@
 
 -
   browser: >
+    Internet Explorer 11 & Microsoft Edge
+  summary: >
+    `background` of `<tr>` is only applied to first child cell instead of all cells in the row
+  upstream_bug: >
+    IE#2110930
+  origin: >
+    Bootstrap#18504
+
+-
+  browser: >
     Firefox
   summary: >
     `.table-bordered` with an empty `<tbody>` is missing borders.
@@ -190,16 +200,6 @@
 
 -
   browser: >
-    Safari
-  summary: >
-    Incorrect placement of `position: fixed` element when it's a child of a `position: relative; left: X%;` element.
-  upstream_bug: >
-    WebKit#147284, Safari#21993128
-  origin: >
-    Bootstrap#16814
-
--
-  browser: >
     Safari (OS X)
   summary: >
     Scrollbar clipped in `select[multiple]` with padding.
@@ -302,10 +302,10 @@
 
 -
   browser: >
-    Safari (iOS 9+)
+    Safari (iPad Pro)
   summary: >
-    Sometimes excessive automatic zoom is applied after opening a modal, and the user isn't allowed to zoom out
+    Rendering of descendants of `position: fixed` element gets clipped on iPad Pro in Landscape orientation
   upstream_bug: >
-    WebKit#150715
+    WebKit#152637, Safari#24030853
   origin: >
-    WebKit#138201
+    Bootstrap#18738

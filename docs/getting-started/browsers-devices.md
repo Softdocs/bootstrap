@@ -13,11 +13,13 @@ Bootstrap supports a wide variety of modern browsers and devices, and some older
 
 ## Supported browsers
 
-Bootstrap supports the **latest, stable releases** of all major browsers and platforms. On Windows, **we support Internet Explorer 9-11 / Microsoft Edge**. More specific support information is provided below.
+Bootstrap supports the **latest, stable releases** of all major browsers and platforms. On Windows, **we support Internet Explorer 9-11 / Microsoft Edge**.
+
+Alternative browsers which use the latest version of WebKit, Blink, or Gecko, whether directly or via the platform's web view API, are not explicitly supported. However, Bootstrap should (in most cases) display and function correctly in these browsers as well. More specific support information is provided below.
 
 ### Mobile devices
 
-Generally speaking, Bootstrap supports the latest versions of each major platform's default browsers.
+Generally speaking, Bootstrap supports the latest versions of each major platform's default browsers. Note that proxy browsers (such as Opera Mini, Opera Mobile's Turbo mode, UC Browser Mini, Amazon Silk) are not supported.
 
 <div class="table-responsive">
   <table class="table table-bordered table-striped">
@@ -26,9 +28,9 @@ Generally speaking, Bootstrap supports the latest versions of each major platfor
         <td></td>
         <th>Chrome</th>
         <th>Firefox</th>
-        <th>Opera</th>
         <th>Safari</th>
         <th>Android Browser &amp; WebView</th>
+        <th>Microsoft Edge</th>
       </tr>
     </thead>
     <tbody>
@@ -36,17 +38,25 @@ Generally speaking, Bootstrap supports the latest versions of each major platfor
         <th scope="row">Android</th>
         <td class="text-success">Supported</td>
         <td class="text-success">Supported</td>
-        <td class="text-danger">Not supported</td>
         <td class="text-muted">N/A</td>
         <td class="text-success">Android v5.0+ supported</td>
+        <td class="text-muted">N/A</td>
       </tr>
       <tr>
         <th scope="row">iOS</th>
         <td class="text-success">Supported</td>
-        <td class="text-muted">N/A</td>
-        <td class="text-danger">Not supported</td>
+        <td class="text-success">Supported</td>
         <td class="text-success">Supported</td>
         <td class="text-muted">N/A</td>
+        <td class="text-muted">N/A</td>
+      </tr>
+      <tr>
+        <th scope="row">Windows 10 Mobile</th>
+        <td class="text-muted">N/A</td>
+        <td class="text-muted">N/A</td>
+        <td class="text-muted">N/A</td>
+        <td class="text-muted">N/A</td>
+        <td class="text-success">Supported</td>
       </tr>
     </tbody>
   </table>
@@ -98,42 +108,34 @@ Unofficially, Bootstrap should look and behave well enough in Chromium and Chrom
 
 For a list of some of the browser bugs that Bootstrap has to grapple with, see our [Wall of browser bugs]({{ site.baseurl }}/browser-bugs/).
 
-## Internet Explorer 9
+## Internet Explorer 9 & 10
 
-Internet Explorer 9 is also supported, however, please be aware that some CSS3 properties and HTML5 elements are not fully supported.
+Internet Explorer 9 & 10 are also supported, however, please be aware that some CSS3 properties and HTML5 elements are not fully supported.
 
 <div class="table-responsive">
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
         <th scope="col">Feature</th>
-        <th scope="col">Status</th>
+        <th scope="col">Internet Explorer 9</th>
+        <th scope="col">Internet Explorer 10</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius"><code>border-radius</code></a></th>
-        <td class="text-success">Supported</td>
-      </tr>
-      <tr>
-        <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow"><code>box-shadow</code></a></th>
-        <td class="text-success">Supported</td>
-      </tr>
-      <tr>
-        <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform"><code>transform</code></a></th>
-        <td class="text-success">Supported, with <code>-ms</code> prefix</td>
-      </tr>
-      <tr>
         <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition"><code>transition</code></a></th>
         <td class="text-danger">Not supported</td>
+        <td class="text-success">Supported</td>
       </tr>
       <tr>
         <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input#attr-placeholder"><code>placeholder</code></a></th>
         <td class="text-danger">Not supported</td>
+        <td class="text-success">Supported</td>
       </tr>
       <tr>
         <th scope="row"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">Flexbox</a></th>
         <td class="text-danger">Not supported</td>
+        <td class="text-warning">Partially supported, with <code>-ms</code> prefix<br><a href="http://caniuse.com/#feat=flexbox">See <em>Can I use</em> for details</a></td>
       </tr>
     </tbody>
   </table>

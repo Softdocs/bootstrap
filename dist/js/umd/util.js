@@ -13,7 +13,7 @@
 })(this, function (exports, module) {
   /**
    * --------------------------------------------------------------------------
-   * Bootstrap (v4.0.0-alpha): util.js
+   * Bootstrap (v4.0.0-alpha.2): util.js
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
@@ -114,7 +114,9 @@
 
       getUID: function getUID(prefix) {
         do {
+          /* eslint-disable no-bitwise */
           prefix += ~ ~(Math.random() * 1000000); // "~~" acts like a faster Math.floor() here
+          /* eslint-enable no-bitwise */
         } while (document.getElementById(prefix));
         return prefix;
       },

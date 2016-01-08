@@ -1,6 +1,6 @@
 /*!
- * Bootstrap v4.0.0-alpha (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v4.0.0-alpha.2 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * Modified to compile for use at Softdocs
  */
@@ -57,9 +57,5 @@ $enable-flex:               true;
 
 // Utility classes
 @import "utilities";
-@import "utilities-background";
-@import "utilities-spacing";
-@import "utilities-responsive";
-
 //Additional
 @import "bootstrap-reboot";
