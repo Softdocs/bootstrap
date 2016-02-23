@@ -10,6 +10,7 @@ $enable-flex:               true;
 
 
 // Core variables and mixins
+@import "custom";
 @import "variables";
 @import "mixins";
 
@@ -23,6 +24,7 @@ $enable-flex:               true;
 // @import "images";
 // @import "code";
 @import "grid";
+
 // @import "tables";
 // @import "forms";
 // @import "buttons";
@@ -48,6 +50,7 @@ $enable-flex:               true;
 // @import "list-group";
 // @import "responsive-embed";
 // @import "close";
+
 
 // Components w/ JavaScript
 // @import "modal";
