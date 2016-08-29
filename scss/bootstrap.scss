@@ -6,17 +6,8 @@
  * Modified to compile for use at Softdocs
  */
 
-<<<<<<< HEAD
-
 $font-family-sans-serif:     "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $enable-flex:               true;
-
-=======
-$font-family-sans-serif:     "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$enable-flex:               true;
-
-
->>>>>>> origin/master
 // Core variables and mixins
 @import "custom";
 @import "variables";
@@ -32,20 +23,11 @@ $enable-flex:               true;
 // @import "images";
 // @import "code";
 @import "grid";
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 // @import "tables";
 // @import "forms";
 // @import "buttons";
 
-<<<<<<< HEAD
 // Components
-=======
-
-// // Components
->>>>>>> origin/master
 // @import "animation";
 // @import "dropdown";
 // @import "button-group";
@@ -56,12 +38,9 @@ $enable-flex:               true;
 // @import "card";
 // @import "breadcrumb";
 // @import "pagination";
-<<<<<<< HEAD
 // @import "tags";
-=======
 // @import "pager";
 // @import "labels";
->>>>>>> origin/master
 // @import "jumbotron";
 // @import "alert";
 // @import "progress";
@@ -70,12 +49,7 @@ $enable-flex:               true;
 // @import "responsive-embed";
 // @import "close";
 
-<<<<<<< HEAD
-// // Components w/ JavaScript
-=======
-
 // Components w/ JavaScript
->>>>>>> origin/master
 // @import "modal";
 // @import "tooltip";
 // @import "popover";
@@ -83,11 +57,5 @@ $enable-flex:               true;
 
 // Utility classes
 @import "utilities";
-<<<<<<< HEAD
-
 //Additional
 @import "bootstrap-reboot";
-=======
-//Additional
-@import "bootstrap-reboot";
->>>>>>> origin/master
