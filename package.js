@@ -3,10 +3,17 @@
 /* global Package:true */
 
 Package.describe({
+<<<<<<< HEAD
   name: 'twbs:bootstrap',  // http://atmospherejs.com/twbs/bootstrap
   summary: 'The most popular front-end framework for developing responsive, mobile first projects on the web.',
   version: '4.0.0-alpha.3',
   git: 'https://github.com/twbs/bootstrap.git'
+=======
+  name: 'softdocs:bootstrap',  // http://atmospherejs.com/twbs/bootstrap
+  summary: 'The most popular front-end framework for developing responsive, mobile first projects on the web. Modified for Softdocs',
+  version: '4.0.0-alpha.3',
+  git: 'https://github.com/softdocs/bootstrap.git'
+>>>>>>> origin/master
 });
 
 Package.onUse(function (api) {
