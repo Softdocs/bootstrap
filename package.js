@@ -5,7 +5,7 @@
 Package.describe({
   name: 'softdocs:bootstrap',  // http://atmospherejs.com/twbs/bootstrap
   summary: 'The most popular front-end framework for developing responsive, mobile first projects on the web. Modified for Softdocs',
-  version: '4.0.0-alpha.4',
+  version: '4.0.0-alpha.4.1',
   git: 'https://github.com/softdocs/bootstrap.git'
 });
 
