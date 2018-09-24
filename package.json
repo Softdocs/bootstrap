@@ -25,7 +25,7 @@
     "css": "npm-run-all --parallel css-lint* css-compile* --sequential css-prefix* css-minify*",
     "css-main": "npm-run-all --parallel css-lint css-compile --sequential css-prefix css-minify css-copy",
     "css-docs": "npm-run-all --parallel css-lint-docs css-compile-docs --sequential css-prefix-docs css-minify-docs",
-    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap.scss dist/css/bootstrap.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-grid.scss dist/css/bootstrap-grid.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-reboot.scss dist/css/bootstrap-reboot.css && npm run css-copy",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap.scss dist/css/bootstrap.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-grid.scss dist/css/bootstrap-grid.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-reboot.scss dist/css/bootstrap-reboot.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 scss/bootstrap-etrieve.scss dist/css/bootstrap-etrieve.css && npm run css-copy",
     "css-compile-docs": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 site/docs/4.1/assets/scss/docs.scss site/docs/4.1/assets/css/docs.min.css",
     "css-copy": "shx mkdir -p site/docs/4.1/dist/ && shx cp -r dist/css/ site/docs/4.1/dist/",
     "css-lint": "stylelint --syntax scss \"scss/**/*.scss\"",
@@ -154,6 +154,14 @@
     "scss/**/*.scss"
   ],
   "bundlesize": [
+    {
+      "path": "./dist/css/bootstrap-etrieve.css",
+      "maxSize": "7 kB"
+    },
+    {
+      "path": "./dist/css/bootstrap-etrieve.min.css",
+      "maxSize": "6 kB"
+    },
     {
       "path": "./dist/css/bootstrap-grid.css",
       "maxSize": "7 kB"
