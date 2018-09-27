@@ -1,0 +1,11 @@
+// Page class to make form look like paper at full size
+
+@media screen and (min-width: 960px) {
+  .page {
+    max-width: 960px;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid $gray-400;
+    box-shadow: 0 0 10px $gray-600;
+  }
+}

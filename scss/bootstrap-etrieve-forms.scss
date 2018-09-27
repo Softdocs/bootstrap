@@ -1,0 +1,21 @@
+
+@import "variables-etrieve-forms";
+@import "bootstrap";
+@import "etrieve-forms-paper";
+
+@media print {
+  .form-control:disabled,
+  .form-control[readonly] {
+    color: $black;
+    background-color: $white;
+  }
+}
+
+label {
+  font-weight: $font-weight-bold;
+  line-height: 2;
+}
+
+.row {
+  margin-bottom: .375rem;
+}
