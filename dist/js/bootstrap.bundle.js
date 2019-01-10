@@ -1041,8 +1041,6 @@
         if (typeof config === 'object') {
           _config = _objectSpread({}, _config, config);
         }
-      });
-    };
 
         var action = typeof config === 'string' ? config : _config.slide;
 
@@ -4942,7 +4940,6 @@
           if (event.target !== event.currentTarget) {
             return;
           }
-        };
 
           if (_this8._config.backdrop === 'static') {
             _this8._element.focus();
@@ -5124,8 +5121,6 @@
    * ------------------------------------------------------------------------
    */
 
-  $(document).on(Event$5.CLICK_DATA_API, Selector$5.DATA_TOGGLE, function (event) {
-    var _this10 = this;
 
   $(document).on(Event$5.CLICK_DATA_API, Selector$5.DATA_TOGGLE, function (event) {
     var _this10 = this;

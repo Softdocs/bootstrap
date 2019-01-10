@@ -127,15 +127,6 @@
    * --------------------------------------------------------------------------
    */
 
-  function setTransitionEndSupport() {
-    $.fn.emulateTransitionEnd = transitionEndEmulator;
-    $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
-  }
-  /**
-   * --------------------------------------------------------------------------
-   * Public Util Api
-   * --------------------------------------------------------------------------
-   */
 
   var Util = {
     TRANSITION_END: 'bsTransitionEnd',
@@ -1019,8 +1010,6 @@
         } else {
           this._config.interval = this._config.defaultInterval || this._config.interval;
         }
-      });
-    };
 
         var transitionDuration = Util.getTransitionDurationFromElement(activeElement);
         $(activeElement).one(Util.TRANSITION_END, function () {

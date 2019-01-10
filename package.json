@@ -25,6 +25,7 @@
     "check-broken-links": "npm-run-all --parallel --race \"http-server -- _gh_pages/\" blc",
     "css": "npm-run-all css-compile css-prefix css-minify css-copy",
     "css-copy": "cross-env-shell shx mkdir -p site/docs/$npm_package_version_short/dist/ && cross-env-shell shx cp -r dist/css/ site/docs/$npm_package_version_short/dist/",
+    "css-etrieve": "npm-run-all css-lint css-compile-etrieve css-prefix-main css-minify-etrieve css-copy",
     "css-main": "npm-run-all css-lint css-compile-main css-prefix-main css-minify-main css-copy",
     "css-docs": "npm-run-all css-compile-docs css-prefix-docs css-minify-docs",
     "css-compile": "npm-run-all --parallel css-compile-*",

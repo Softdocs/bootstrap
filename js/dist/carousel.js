@@ -334,8 +334,7 @@
         } else {
           _this3.touchDeltaX = event.originalEvent.touches[0].clientX - _this3.touchStartX;
         }
-      }
-    };
+      };
 
       var end = function end(event) {
         if (_this3._pointerEvent && PointerType[event.originalEvent.pointerType.toUpperCase()]) {
