@@ -1,13 +1,13 @@
 /*!
-  * Bootstrap modal.js v4.1.3 (https://getbootstrap.com/)
-  * Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  * Bootstrap modal.js v4.2.1 (https://getbootstrap.com/)
+  * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('jquery'), require('./util.js')) :
   typeof define === 'function' && define.amd ? define(['jquery', './util.js'], factory) :
-  (global.Modal = factory(global.jQuery,global.Util));
-}(this, (function ($,Util) { 'use strict';
+  (global = global || self, global.Modal = factory(global.jQuery, global.Util));
+}(this, function ($, Util) { 'use strict';
 
   $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
   Util = Util && Util.hasOwnProperty('default') ? Util['default'] : Util;
@@ -63,20 +63,13 @@
   }
 
   /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v4.1.3): modal.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-   * --------------------------------------------------------------------------
-   */
-
-  /**
    * ------------------------------------------------------------------------
    * Constants
    * ------------------------------------------------------------------------
    */
 
   var NAME = 'modal';
-  var VERSION = '4.1.3';
+  var VERSION = '4.2.1';
   var DATA_KEY = 'bs.modal';
   var EVENT_KEY = "." + DATA_KEY;
   var DATA_API_KEY = '.data-api';
@@ -140,6 +133,7 @@
       this._isShown = false;
       this._isBodyOverflowing = false;
       this._ignoreBackdropClick = false;
+      this._isTransitioning = false;
       this._scrollbarWidth = 0;
     } // Getters
 
@@ -154,7 +148,7 @@
     _proto.show = function show(relatedTarget) {
       var _this = this;
 
-      if (this._isTransitioning || this._isShown) {
+      if (this._isShown || this._isTransitioning) {
         return;
       }
 
@@ -178,8 +172,6 @@
       this._setScrollbar();
 
       this._adjustDialog();
-
-      $(document.body).addClass(ClassName.OPEN);
 
       this._setEscapeEvent();
 
@@ -208,7 +200,7 @@
         event.preventDefault();
       }
 
-      if (this._isTransitioning || !this._isShown) {
+      if (!this._isShown || this._isTransitioning) {
         return;
       }
 
@@ -246,8 +238,17 @@
     };
 
     _proto.dispose = function dispose() {
+      [window, this._element, this._dialog].forEach(function (htmlElement) {
+        return $(htmlElement).off(EVENT_KEY);
+      });
+      /**
+       * `document` has 2 events `Event.FOCUSIN` and `Event.CLICK_DATA_API`
+       * Do not move `document` in `htmlElements` array
+       * It will remove `Event.CLICK_DATA_API` event that should remain
+       */
+
+      $(document).off(Event.FOCUSIN);
       $.removeData(this._element, DATA_KEY);
-      $(window, document, this._element, this._backdrop).off(EVENT_KEY);
       this._config = null;
       this._element = null;
       this._dialog = null;
@@ -255,13 +256,14 @@
       this._isShown = null;
       this._isBodyOverflowing = null;
       this._ignoreBackdropClick = null;
+      this._isTransitioning = null;
       this._scrollbarWidth = null;
     };
 
     _proto.handleUpdate = function handleUpdate() {
       this._adjustDialog();
-    }; // Private
-
+    } // Private
+    ;
 
     _proto._getConfig = function _getConfig(config) {
       config = _objectSpread({}, Default, config);
@@ -282,6 +284,8 @@
       this._element.style.display = 'block';
 
       this._element.removeAttribute('aria-hidden');
+
+      this._element.setAttribute('aria-modal', true);
 
       this._element.scrollTop = 0;
 
@@ -309,7 +313,7 @@
       };
 
       if (transition) {
-        var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+        var transitionDuration = Util.getTransitionDurationFromElement(this._dialog);
         $(this._dialog).one(Util.TRANSITION_END, transitionComplete).emulateTransitionEnd(transitionDuration);
       } else {
         transitionComplete();
@@ -361,6 +365,8 @@
       this._element.style.display = 'none';
 
       this._element.setAttribute('aria-hidden', true);
+
+      this._element.removeAttribute('aria-modal');
 
       this._isTransitioning = false;
 
@@ -451,11 +457,11 @@
       } else if (callback) {
         callback();
       }
-    }; // ----------------------------------------------------------------------
+    } // ----------------------------------------------------------------------
     // the following methods are used to handle overflowing modals
     // todo (fat): these should probably be refactored out of modal.js
     // ----------------------------------------------------------------------
-
+    ;
 
     _proto._adjustDialog = function _adjustDialog() {
       var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
@@ -505,6 +511,8 @@
         var calculatedPadding = $(document.body).css('padding-right');
         $(document.body).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
       }
+
+      $(document.body).addClass(ClassName.OPEN);
     };
 
     _proto._resetScrollbar = function _resetScrollbar() {
@@ -538,8 +546,8 @@
       var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
       document.body.removeChild(scrollDiv);
       return scrollbarWidth;
-    }; // Static
-
+    } // Static
+    ;
 
     Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
       return this.each(function () {
@@ -584,6 +592,13 @@
    * ------------------------------------------------------------------------
    */
 
+    return Modal;
+  }();
+  /**
+   * ------------------------------------------------------------------------
+   * Data Api implementation
+   * ------------------------------------------------------------------------
+   */
 
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
     var _this10 = this;
@@ -632,5 +647,5 @@
 
   return Modal;
 
-})));
+}));
 //# sourceMappingURL=modal.js.map
